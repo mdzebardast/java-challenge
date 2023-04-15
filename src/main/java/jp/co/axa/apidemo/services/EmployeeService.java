@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface EmployeeService {
 
-    public List<Employee> retrieveEmployees();
+    public List<Employee> retrieveEmployees(Integer pageNo, Integer pageSize);
 
     public Employee getEmployee(Long employeeId);
 
