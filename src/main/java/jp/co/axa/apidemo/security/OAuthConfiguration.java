@@ -41,8 +41,8 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
                 .secret(passwordEncoder.encode("client_secret"))
                 .authorizedGrantTypes("password", "refresh_token", "authorization_code")
                 .scopes("SimpleSpringScope")
-                .accessTokenValiditySeconds(60 * 15) // 15 mins
-                .refreshTokenValiditySeconds(60 * 60); // 60 mins
+                .accessTokenValiditySeconds(82800) // 23 hours
+                .refreshTokenValiditySeconds(2628000); // One month
     }
 
 }
