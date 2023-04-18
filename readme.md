@@ -1,52 +1,35 @@
-### How to use this spring-boot project
+### Employee App REST API
 
-- Install packages with `mvn package`
-- Run `mvn spring-boot:run` for starting the application (or use your IDE)
+This is a Spring Boot application that provides a REST API for managing employee records.
+The API allows users to create, retrieve, update, and delete employee records in an in-memory H2 database.
 
-Application (with the embedded H2 database) is ready to be used ! You can access the url below for testing it :
+### Requirements
+ 
+- Java 8
 
+### Installation
+
+- Clone this repository: git clone https://github.com/mdzebardast/java-challenge.git
+- Navigate to the project directory: cd java-challenge
+- Build the application: mvn clean install
+- Run the application: mvn spring-boot:run
+
+The application will start up and the REST API will be available at http://localhost:8080/api/v1/employees.
 - Swagger UI : http://localhost:8080/swagger-ui.html
 - H2 UI : http://localhost:8080/h2-console
 
-> Don't forget to set the `JDBC URL` value as `jdbc:h2:mem:testdb` for H2 UI.
+### Libraries used
 
+- Spring Boot 2.1.4.RELEASE
+- Spring Boot Test
+- Swagger API
+- Spring security OAuth2 libraries
 
+### Features
+These services can perform:
 
-### Instructions
+- Employee CRUD operations.
 
-- download the zip file of this project
-- create a repository in your own github named 'java-challenge'
-- clone your repository in a folder on your machine
-- extract the zip file in this folder
-- commit and push
+### Security
 
-- Enhance the code in any ways you can see, you are free! Some possibilities:
-  - Add tests
-  - Change syntax
-  - Protect controller end points
-  - Add caching logic for database calls
-  - Improve doc and comments
-  - Fix any bug you might find
-- Edit readme.md and add any comments. It can be about what you did, what you would have done if you had more time, etc.
-- Send us the link of your repository.
-
-#### Restrictions
-- use java 8
-
-
-#### What we will look for
-- Readability of your code
-- Documentation
-- Comments in your code 
-- Appropriate usage of spring boot
-- Appropriate usage of packages
-- Is the application running as expected
-- No performance issues
-
-#### Your experience in Java
-
-Please let us know more about your Java experience in a few sentences. For example:
-
-- I have 3 years experience in Java and I started to use Spring Boot from last year
-- I'm a beginner and just recently learned Spring Boot
-- I know Spring Boot very well and have been using it for many years
+This application uses OAuth2 to protect Rest API.
