@@ -1,6 +1,6 @@
 package jp.co.axa.apidemo.services;
 
-import jp.co.axa.apidemo.entities.Employee;
+import jp.co.axa.apidemo.models.Employee;
 import jp.co.axa.apidemo.repositories.EmployeeRepository;
 import org.junit.Before;
 import org.junit.Test;

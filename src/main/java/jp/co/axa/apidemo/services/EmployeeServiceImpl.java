@@ -1,6 +1,7 @@
 package jp.co.axa.apidemo.services;
 
-import jp.co.axa.apidemo.entities.Employee;
+import jp.co.axa.apidemo.models.Employee;
+import jp.co.axa.apidemo.models.dtos.EmployeeDto;
 import jp.co.axa.apidemo.repositories.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,8 +30,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         return optEmp.get();
     }
 
-    public void saveEmployee(Employee employee) {
-        employeeRepository.save(employee);
+    public void saveEmployee(EmployeeDto employee) {
+        employeeRepository.save(employee.ToEmployee());
         log.info("Employee {} has been saved successfully", employee.getName());
     }
 
