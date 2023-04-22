@@ -2,6 +2,7 @@ package jp.co.axa.apidemo.controllers;
 
 import jp.co.axa.apidemo.entities.Employee;
 import jp.co.axa.apidemo.services.EmployeeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1")
 public class EmployeeController {
@@ -24,6 +26,7 @@ public class EmployeeController {
     @GetMapping("/employees")
     public ResponseEntity<List<Employee>> getAllEmployees(@RequestParam(defaultValue = "0") Integer pageNo,
                                                           @RequestParam(defaultValue = "5") Integer pageSize) {
+        log.info("Request for all employees for page No. of {} and size of {}", pageNo, pageSize);
         return new ResponseEntity<List<Employee>>(employeeService.retrieveEmployees(pageNo, pageSize), new HttpHeaders(), HttpStatus.OK);
     }
 
@@ -35,13 +38,11 @@ public class EmployeeController {
     @PostMapping("/employees")
     public void saveEmployee(Employee employee){
         employeeService.saveEmployee(employee);
-        System.out.println("Employee Saved Successfully");
     }
 
     @DeleteMapping("/employees/{employeeId}")
     public void deleteEmployee(@PathVariable(name="employeeId")Long employeeId){
         employeeService.deleteEmployee(employeeId);
-        System.out.println("Employee Deleted Successfully");
     }
 
     @PutMapping("/employees/{employeeId}")
