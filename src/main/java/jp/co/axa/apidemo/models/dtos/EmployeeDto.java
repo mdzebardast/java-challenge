@@ -1,7 +1,7 @@
 package jp.co.axa.apidemo.models.dtos;
 
 import jp.co.axa.apidemo.models.Employee;
-import lombok.*;
+import lombok.Data;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
