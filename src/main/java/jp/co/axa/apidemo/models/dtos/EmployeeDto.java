@@ -12,7 +12,7 @@ public class EmployeeDto {
     private String name;
     @Min(0)
     private Integer salary;
-    @NotEmpty(message = "The full name is required.")
+    @NotEmpty(message = "The department name is required.")
     private String department;
 
     public Employee ToEmployee(){
